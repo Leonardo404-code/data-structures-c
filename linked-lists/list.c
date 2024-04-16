@@ -21,15 +21,23 @@ void add(float x, float y)
   pointsList = p;
 };
 
+void imprime()
+{
+  Point *auxList = pointsList;
+  while (auxList != NULL)
+  {
+    printf("\nPoint(%.1f,%.1f)", auxList->x, auxList->y);
+    auxList = auxList->next;
+  }
+}
+
 int main()
 {
   add(1, 5);
   add(2, 7);
   add(5, 3);
 
-  printf("%.0f", pointsList->x);
-  printf("\n%.0f", pointsList->next->x);
-  printf("\n%.0f", pointsList->next->next->x);
+  imprime();
 
   return 0;
 };
